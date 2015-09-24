@@ -1,0 +1,63 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+task generateDependencies(type: Copy) {
+  from sourceSets.main.runtimeClasspath
+  into 'dependencies/'
+}
+
+repositories {
+  
+    maven {
+      url "/Users/gantman/.rubymotion-android/sdk/extras/android/m2repository/"
+    }
+  
+  
+    maven {
+      url "/Users/gantman/.rubymotion-android/sdk/extras/google/m2repository/"
+    }
+  
+  
+  mavenCentral()
+}
+
+dependencies {
+  
+  
+    
+      compile group: 'com.fasterxml.jackson.core', version: '+', name: 'jackson-core'
+    
+  
+    
+      compile group: 'com.fasterxml.jackson.core', version: '+', name: 'jackson-annotations'
+    
+  
+    
+      compile group: 'com.fasterxml.jackson.core', version: '+', name: 'jackson-databind'
+    
+  
+    
+      compile group: 'com.android.support', version: '22.0.+', name: 'support-v4'
+    
+  
+    
+      compile group: 'com.mcxiaoke.volley', version: '1.0.10', name: 'library'
+    
+  
+    
+      compile group: 'com.koushikdutta.ion', version: '2.0+', name: 'ion'
+    
+  
+    
+      compile group: 'com.google.android.gms', version: '7.8.+', name: 'play-services-gcm'
+    
+  
+    
+      compile 'com.makeramen:roundedimageview:2.1.2'
+    
+  
+    
+      compile 'in.srain.cube:ultra-ptr:1.0.10'
+    
+  
+}
